@@ -10,7 +10,7 @@ router.get('/', function(req, res, next){
 			$("div.liga>table>tbody>tr").each(function(i, element){
 				var goles = $(this).find('a>div.clase').text().split('-');
 				var json = {
-					fecha: $(this).html(),
+					fecha: $(this).find('td:first-child').text().substring(0,10),
 					hora: $(this).find('span.fecha-status').html(),
 					estado: $(this).find('span.fecha-status.live').html(),
 					equipol: {
